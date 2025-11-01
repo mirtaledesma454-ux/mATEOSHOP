@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="facebook-domain-verification" content="qt3c87ez5k5kc5o1kqjznevx1uzvhf" />
+    <title>Mateoshop - Tu Tienda Online de Confianza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0066cc;
+            --secondary-blue: #0084ff;
+            --accent-teal: #00d4aa;
+            --light-blue: #e6f2ff;
+            --dark-navy: #001a33;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+            --gray-light: #f8f9fa;
+            --gray-medium: #6c757d;
+            --gradient-blue: linear-gradient(135deg, #0066cc 0%, #0084ff 100%);
+            --gradient-teal: linear-gradient(135deg, #00d4aa 0%, #0084ff 100%);
+            --gradient-hero: linear-gradient(135deg, #0066cc 0%, #00d4aa 100%);
+            --shadow-sm: 0 2px 10px rgba(0, 102, 204, 0.1);
+            --shadow-md: 0 5px 20px rgba(0, 102, 204, 0.15);
+            --shadow-lg: 0 10px 40px rgba(0, 102, 204, 0.2);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--gray-light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-navy);
+            color: var(--text-light);
+            padding: 12px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-bar-item i {
+            color: var(--accent-teal);
+        }
+
+        .top-bar-item a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .top-bar-item a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--text-light);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-teal);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-blue);
+            color: var(--text-light) !important;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-hero);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+            color: var(--text-light);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.1); }
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--text-light);
+            color: var(--primary-blue);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--text-light);
+        }
+
+        .btn-outline:hover {
+            background: var(--text-light);
+            color: var(--primary-blue);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: var(--text-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--text-light);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--gray-medium);
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: var(--gray-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            font-weight: 900;
+        }
+
+        .about-text p {
+            color: var(--gray-medium);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 2px solid var(--light-blue);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: var(--gray-medium);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Products/Services Section */
+        .products-section {
+            padding: 100px 0;
+            background: var(--text-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 900;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray-medium);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--text-light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 102, 204, 0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-blue);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--gradient-teal);
+            color: var(--text-light);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-content h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .product-content p {
+            color: var(--gray-medium);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .product-features li {
+            padding: 8px 0;
+            color: var(--gray-medium);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--gradient-hero);
+            color: var(--text-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--text-light);
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .contact-card p,
+        .contact-card a {
+            color: var(--text-light);
+            text-decoration: none;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .contact-card a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-navy);
+            color: var(--text-light);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--accent-teal);
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            background: var(--gradient-teal);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-teal);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.7);
+        }
+
+        @keyframes pulse-whatsapp {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 10px 40px rgba(37, 211, 102, 0.8), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-content,
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .menu-toggle span {
+                width: 25px;
+                height: 3px;
+                background: var(--primary-blue);
+                border-radius: 3px;
+                transition: all 0.3s ease;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+5491165530854">+54 9 11 6553-0854</a>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Roldan 2620, Mar Del Plata</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/5491165530854" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">Mateoshop</div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#products">Productos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#contact" class="nav-cta">Comprar Ahora</a></li>
+                </ul>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Bienvenido a Mateoshop</h1>
+                    <div class="tagline">Tu Tienda Online de Confianza</div>
+                    <p>
+                        Descubre la mejor selección de productos de calidad. 
+                        En Mateoshop ofrecemos una experiencia de compra única 
+                        con los mejores precios y atención personalizada.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary">
+                            <i class="fas fa-shopping-bag"></i> Ver Productos
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i> Contáctanos
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" alt="Mateoshop">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Envío Rápido</h3>
+                    <p>Entregas rápidas y seguras a todo el país</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Compra Segura</h3>
+                    <p>Transacciones 100% seguras y protegidas</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Atención 24/7</h3>
+                    <p>Soporte al cliente disponible siempre</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Mejores Precios</h3>
+                    <p>Los mejores precios del mercado garantizados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=600&h=400&fit=crop" alt="Sobre Mateoshop">
+                </div>
+                <div class="about-text">
+                    <h2>¿Quiénes Somos?</h2>
+                    <p>
+                        Mateoshop es tu tienda online de confianza, especializada en ofrecer 
+                        productos de calidad con el mejor servicio al cliente. Nos destacamos 
+                        por nuestra atención personalizada y compromiso con la satisfacción total.
+                    </p>
+                    <p>
+                        Con años de experiencia en el mercado, hemos construido una reputación 
+                        sólida basada en la confianza, calidad y excelencia en cada transacción. 
+                        Tu satisfacción es nuestra prioridad número uno.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Años de Experiencia</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Clientes Felices</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5000+</div>
+                            <div class="stat-label">Productos Vendidos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Productos</h2>
+                <p>Explora nuestra amplia gama de productos cuidadosamente seleccionados para ti</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&h=400&fit=crop" alt="Producto 1">
+                        <div class="product-badge">Nuevo</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Línea Premium</h3>
+                        <p>Productos de alta calidad seleccionados especialmente para ti</p>
+                        <ul class="product-features">
+                            <li>Calidad garantizada</li>
+                            <li>Envío gratis</li>
+                            <li>Garantía incluida</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=500&h=400&fit=crop" alt="Producto 2">
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Productos Especiales</h3>
+                        <p>Selección exclusiva de productos únicos y especiales</p>
+                        <ul class="product-features">
+                            <li>Ediciones limitadas</li>
+                            <li>Diseño exclusivo</li>
+                            <li>Entrega rápida</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop" alt="Producto 3">
+                        <div class="product-badge">Oferta</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Ofertas Especiales</h3>
+                        <p>Aprovecha nuestras promociones y descuentos exclusivos</p>
+                        <ul class="product-features">
+                            <li>Precios especiales</li>
+                            <li>Pagos en cuotas</li>
+                            <li>Descuentos adicionales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header" style="color: white;">
+                <h2 style="color: white;">Contáctanos</h2>
+                <p style="opacity: 0.9;">Estamos aquí para ayudarte. Ponte en contacto con nosotros</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Nuestra Ubicación</h3>
+                    <p>Roldan 2620<br>Mar Del Plata, Argentina</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Teléfono</h3>
+                    <p><a href="tel:+5491165530854">+54 9 11 6553-0854</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/5491165530854?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20Mateoshop" target="_blank">Escribinos por WhatsApp</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>CUIL</h3>
+                    <p>23-46012891-9</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Horarios</h3>
+                    <p>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 9:00 - 13:00</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Tienda</h3>
+                    <p>Atención presencial y online<br>Disponible todos los días</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">Mateoshop</div>
+                    <p>Tu tienda online de confianza. Productos de calidad con el mejor servicio al cliente.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Información</h4>
+                    <a href="#about">Sobre Nosotros</a>
+                    <a href="#products">Productos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#">Política de Privacidad</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Roldan 2620, Mar Del Plata</p>
+                    <p><i class="fas fa-phone"></i> +54 9 11 6553-0854</p>
+                    <p><i class="fas fa-id-card"></i> CUIL: 23-46012891-9</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Redes Sociales</h4>
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://wa.me/5491165530854" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mateoshop. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5491165530854?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20productos%20de%20Mateoshop" 
+       class="whatsapp-float" 
+       target="_blank" 
+       title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 100;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards
+        document.querySelectorAll('.feature-card, .product-card, .contact-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
